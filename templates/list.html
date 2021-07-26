@@ -7,6 +7,11 @@
     <title>NP List</title>
 </head>
 <body>
-    The code you entered: {{ stateCode }}
+    <ul>
+        {% for park in parkList %}
+            <li> {{ parkList.fullName }}</li>
+        {% endfor %}
+    </ul>
+    {% print(parkList) %}
 </body>
 </html>

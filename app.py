@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import os
 import requests
 
+
 load_dotenv()
 PARK = os.getenv('PARK')
 
@@ -17,15 +18,14 @@ def hello_flask():
 
 @app.route('/list')
 def list():
-    #payload = {'stateCode':request.args.get('stateCode'),'&sort=&api_key=':{{PARK}}}
     stateCode = request.args.get('stateCode')
-    sort = ''
     park = PARK
     #print(park)
-    payload = {'stateCode': stateCode,'sort=': sort, 'api_key': park}
     r = requests.get(f'https://developer.nps.gov/api/v1/parks?stateCode={stateCode}&sort=&api_key={park}')
-    print(r.json())
-    return (r.json())
+    #print(r.json())
+    parkList = r.json()
+    #return (parkList)
+    return render_template('list.html', parkList = parkList)
     
     # return render_template('list.html', stateCode=request.args.get('stateCode', 'I think i missed something'))
 
