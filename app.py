@@ -9,12 +9,11 @@ app = Flask(__name__)
 # ---- ROUTES ----
 @app.route('/')
 def hello_flask():
-    return 'hello from flask!'
+    return render_template('home.html')
 
-@app.route('/cats')
-def cats():
-    # plain HTML
-    return render_template('cats.html')
+@app.route('/list')
+def list():
+    return render_template('list.html', stateCode=request.args.get('stateCode', 'I think i missed something'))
 
 @app.route('/cats/<name>')
 def cat_name(name):
