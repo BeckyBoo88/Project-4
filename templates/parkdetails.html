@@ -11,11 +11,28 @@
         {% for park in parkDetails['data'] %}
             <h1>{{ park['fullName']}}</h1>
             <h3>Fees:</h3>
-            <ul>
-                <li>{{ park['entranceFees'] }} </li>
-            </ul> 
+            {% for park in parkDetails['data'] %}
+                {% for i in park['entranceFees'] %}
+                    <p> {{ i['cost'] }} : {{ i['description'] }} </p> 
+                {% endfor %}
+            {% endfor %}
             <h3>Directions:</h3>
             <p>{{ park['directionsInfo']  }}</p>
+            <h3>Activites:</h3>
+            {% for park in parkDetails['data'] %}
+                {% for i in park['activities'] %}
+                    <p> {{ i['name'] }} </p> 
+                {% endfor %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+
+    <div>
+        <h3>Pictures:</h3>
+        {% for park in parkDetails['data'] %}
+            {% for i in park['images'] %}
+                <img src={{ i['url'] }} alt='Park Pic' height='400px' width='500px' /> 
+            {% endfor %}
         {% endfor %}
     </div>
 </body>
