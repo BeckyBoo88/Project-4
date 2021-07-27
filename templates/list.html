@@ -8,8 +8,8 @@
 </head>
 <body>
     <ul>
-        {% for park in parkList %}
-            <li> {{ parkList.fullName }}</li>
+        {% for i in range(len(parkList)) %}
+            <li> {{ parkList[i]['fullName'] + ': ' + parkList[i]['description']}}</li>
         {% endfor %}
     </ul>
     {% print(parkList) %}

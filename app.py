@@ -23,11 +23,11 @@ def list():
     #print(park)
     r = requests.get(f'https://developer.nps.gov/api/v1/parks?stateCode={stateCode}&sort=&api_key={park}')
     #print(r.json())
-    parkList = r.json()
+    jsonList = r.json()
+    parkList = jsonList['data']
     #return (parkList)
     return render_template('list.html', parkList = parkList)
     
-    # return render_template('list.html', stateCode=request.args.get('stateCode', 'I think i missed something'))
 
 @app.route('/park')
 def park():
