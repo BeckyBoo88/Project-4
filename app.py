@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify, redirect
+from werkzeug import datastructures
 from dotenv import load_dotenv
 
 import os
@@ -23,9 +24,9 @@ def list():
     #print(park)
     r = requests.get(f'https://developer.nps.gov/api/v1/parks?stateCode={stateCode}&sort=&api_key={park}')
     #print(r.json())
-    jsonList = r.json()
-    parkList = jsonList['data']
-    #return (parkList)
+    jsonData = r.json()
+    parkList = jsonData
+    # return jsonify({parkList : parkList})
     return render_template('list.html', parkList = parkList)
     
 
