@@ -7,10 +7,16 @@
     <title>Park Details</title>
 </head>
 <body>
-    <ul>
-        {% for park in parkList['data'] %}
-            <li> {{ park['fullName'] + ': ' + park['entranceFees'] + ', ' + park[directionsInfo]  }}</li>
+    <div>
+        {% for park in parkDetails['data'] %}
+            <h1>{{ park['fullName']}}</h1>
+            <h3>Fees:</h3>
+            <ul>
+                <li>{{ park['entranceFees'] }} </li>
+            </ul> 
+            <h3>Directions:</h3>
+            <p>{{ park['directionsInfo']  }}</p>
         {% endfor %}
-    </ul>
+    </div>
 </body>
 </html>
