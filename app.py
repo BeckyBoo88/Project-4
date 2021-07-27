@@ -8,6 +8,7 @@ import requests
 
 load_dotenv()
 PARK = os.getenv('PARK')
+PARK2 = os.getenv('PARK2')
 
 # config the app
 app = Flask(__name__)
@@ -30,9 +31,16 @@ def list():
     return render_template('list.html', parkList = parkList)
     
 
-@app.route('/park')
+@app.route('/detail')
 def park():
-    return 'Details of selected park will be here'
+    parkCode = request.args.get('parkCode')
+    print('🌈', parkCode)
+    park = PARK2
+    print(park)
+    r = requests.get(f'https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=${park}')
+    jsonDets = r.json()
+    parkDetails = jsonDets
+    return parkDetails
 
 # @app.route('/cats/<name>')
 # def cat_name(name):

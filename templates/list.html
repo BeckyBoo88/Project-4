@@ -10,6 +10,11 @@
     <ul>
         {% for park in parkList['data'] %}
             <li> {{ park['fullName'] + ': ' + park['description'] }}</li>
+            <form method="GET" action="/detail">
+                <input hidden type="text" name="parkCode" id='name' value={{ park['parkCode'] }}>
+                <button class="btn btn-primary" type="submit">More Park Facts</button>
+                <hr />
+              </form>
         {% endfor %}
     </ul>
 </body>
