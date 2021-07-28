@@ -1,0 +1,34 @@
+#homeDiv {
+    margin: 0 auto;
+    margin-top: 50%;
+    margin-bottom: 50%;
+    margin-left: 50%;
+    display: center;
+    width: 80%;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(235, 202, 159, .5);
+}
+
+#submit {
+    padding: 10px;
+    margin-top: 7px;
+}
+
+#stateC {
+    height: 20px;
+}
+
+body {
+    background-image: url(/static/images/npbackground.jpg);
+    /* background-repeat: no-repeat;
+    background-size: cover;
+    overflow: none;
+} */
+   
+    left:50%;
+    width:774px;
+    height:759px;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
