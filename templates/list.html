@@ -8,18 +8,20 @@
     <link rel='stylesheet' href='/static/css/list.css'>
 </head>
 <body>
-    <a href="/">Home Page</a>
-    <ul>
-        {% for park in parkList['data'] %}
-            <li id='title'> {{ park['fullName'] + ': ' }} </li>
-            <li> {{ park['description'] }} </li>
-            <form method="GET" action="/detail">
-                <input hidden type="text" name="parkCode" id='name' value={{ park['parkCode'] }}>
-                <button class="btn btn-primary" type="submit">More Park Facts</button>
-                <hr />
-              </form>
-        {% endfor %}
-    </ul>
+    <a href="/">Home</a>
+    <div id='list'>
+        <ul>
+            {% for park in parkList['data'] %}
+                <li id='title'> {{ park['fullName'] + ': ' }} </li>
+                <li> {{ park['description'] }} </li>
+                <form method="GET" action="/detail">
+                    <input hidden type="text" name="parkCode" id='name' value={{ park['parkCode'] }}>
+                    <button class="btn" type="submit">More Park Facts</button>
+                    <hr />
+                </form>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>
 

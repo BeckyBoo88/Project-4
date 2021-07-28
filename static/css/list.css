@@ -4,8 +4,26 @@ ul {
 
 #title {
     font-weight: bold;
+    display: center;
+    font-size: 2em;
+    margin-bottom: 2%;
 }
 
 a {
     text-decoration: none;
+}
+
+#list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn {
+    margin-top: 2%;
+}
+
+body {
+    background: linear-gradient(0deg, rgba(255,199,78,1) 0%, rgba(0,176,255,1) 100%);
 }
