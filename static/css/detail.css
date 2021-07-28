@@ -1,0 +1,31 @@
+a {
+    text-decoration: none;
+}
+
+.dets {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: start;
+    padding-left: 2%;
+}
+
+p {
+    padding-left: 4%;
+}
+
+img {
+    margin: 0 auto;
+    padding: 3%;
+}
+
+#activities {
+    display: inline;
+}
+    
