@@ -1,0 +1,11 @@
+ul {
+    list-style-type: none;
+}
+
+#title {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}

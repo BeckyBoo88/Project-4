@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NP List</title>
+    <link rel='stylesheet' href='/static/css/list.css'>
 </head>
 <body>
     <a href="/">Home Page</a>
     <ul>
         {% for park in parkList['data'] %}
-            <li> {{ park['fullName'] + ': ' + park['description'] }}</li>
+            <li id='title'> {{ park['fullName'] + ': ' }} </li>
+            <li> {{ park['description'] }} </li>
             <form method="GET" action="/detail">
                 <input hidden type="text" name="parkCode" id='name' value={{ park['parkCode'] }}>
                 <button class="btn btn-primary" type="submit">More Park Facts</button>
